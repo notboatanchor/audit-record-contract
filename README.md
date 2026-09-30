@@ -6,9 +6,9 @@ governance layers attach their own context under one integrity construction.
 What must agree across implementations is the bytes, not the semantics.
 
 - **Specification:** [`spec/audit-record-contract.md`](spec/audit-record-contract.md)
-- **Conformance vectors + reference verifier:** [`vectors/`](vectors/) (26 vectors, zero dependencies)
+- **Conformance vectors + reference verifier:** [`vectors/`](vectors/) (30 vectors, zero dependencies)
 - **Canonical form identifier:** `audit-record-contract/1`
-- **Status:** 1.0.0-draft.1. Successor home of MCP SEP-3004 (PR #3004, closed 2026-09-22 under a process change; spec Appendix A). The normative text is carried unchanged in substance.
+- **Status:** 1.0.0. Successor home of MCP SEP-3004 (PR #3004, closed 2026-09-22 under a process change; spec Appendix A). The normative text is carried unchanged in substance.
 
 ## Run the vectors against your implementation
 
@@ -18,7 +18,7 @@ node --experimental-strip-types vectors/run.ts     # Node 22.6+
 npx tsx vectors/run.ts
 ```
 
-Expected: `26 vectors — 26 passed, 0 failed`.
+Expected: `30 vectors — 30 passed, 0 failed`.
 
 The vectors are record/verifier vectors evaluated over an exported record set,
 not wire-protocol scenarios. To check your own emitter, reproduce the two

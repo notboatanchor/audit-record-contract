@@ -1,6 +1,6 @@
 {
   "name": "@notboatanchor/audit-record-contract",
-  "version": "1.0.0-draft.1",
+  "version": "1.0.0",
   "private": true,
   "description": "Tamper-Evident Audit Record Contract: canonical byte form, SHA-256 hash chain, and verification procedure for audit records, with a typed extension mechanism.",
   "license": "Apache-2.0",
