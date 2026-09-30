@@ -385,7 +385,7 @@ export const VECTORS: Vector[] = [
       // The companion to V-REC2-unpaired-surrogate: the well-formedness rule
       // rejects unpaired code units, not astral characters. §2.3 also requires
       // minimal escaping, so U+1F512 appears in the preimage as its UTF-8 bytes,
-      // never as the escape sequence "🔒".
+      // never as the escape sequence "\uD83D\uDD12".
       const good = clone(rec1);
       (good.extensions['caller-governance'] as Record<string, unknown>).purpose_declared = 'export \u{1F512} locked';
       const pre = canonicalPreimage(good);

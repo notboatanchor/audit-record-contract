@@ -1,7 +1,7 @@
 # Tamper-Evident Audit Record Contract
 
-- **Version**: 1.0.0-draft.1 (canonical form `audit-record-contract/1`, §2.3)
-- **Status**: Draft. The normative sections (§2.1–§2.9) are carried without change in substance from MCP SEP-3004 at commit `9405ba2f`; see Appendix A.
+- **Version**: 1.0.0 (canonical form `audit-record-contract/1`, §2.3)
+- **Status**: Stable. The normative sections (§2.1–§2.9) are carried without change in substance from MCP SEP-3004 at commit `9405ba2f`; see Appendix A.
 - **Created**: 2026-06-02 (as SEP-3004); this document 2026-09-22
 - **Author(s)**: Scott Rhodes (@scottrhodes), Notboatanchor Labs LLC; Syed Maaz Ahmed (@MaazAhmed47), Interlock; Alfredo Metere (@metereconsulting), Enclawed LLC
 - **Origin**: MCP SEP-3004, https://github.com/modelcontextprotocol/modelcontextprotocol/pull/3004 (opened 2026-07-02, closed 2026-09-22 under a process change; Appendix A). This repository is the contract's canonical home.
@@ -236,7 +236,12 @@ deferred` (as in the `/2` conformance fixture); a terminally-blocked disposition
 
 - **`admission-control`** (named; field set contributed — the clearance decision
   and its inputs). Registered by reference: the Attested Tool-Server Admission
-  proposal (ATSA, MCP PR #2809) carries the registration in its own text.
+  proposal (ATSA, MCP PR #2809) carries the registration in its own text. As of
+  2026-09-30, `enclawed/omcp` also publishes an ATSA text that it marks Final
+  (extension version 1.0), with the same `admission-control` profile; PR #2809
+  remains the registration's origin, and neither that text's change to the
+  attestation document's `v` field nor the profile's fields alter this
+  contract's canonical form (§2.3).
 
 New extensions are added by registration without altering §2.1, §2.3, or §2.4. An
 extension MUST NOT redefine a core field or introduce a second canonicalization.
@@ -586,7 +591,7 @@ is a storage property that can only be attested (§2.7).
 
 A normative, runnable vector set for C-REC-1…7 is published in this repository
 under `vectors/`. `node --experimental-strip-types vectors/run.ts` (Node 22.6 or
-later; `npx tsx vectors/run.ts` also works) yields `26 vectors — 26 passed, 0
+later; `npx tsx vectors/run.ts` also works) yields `30 vectors — 30 passed, 0
 failed`. Because the integrity guarantee is off-wire (§2.7), these are
 record/verifier vectors evaluated over an exported record set — not wire-protocol
 scenarios — paired with the structured attestation (§2.7) for the part that is
@@ -790,7 +795,9 @@ content verdict. The normative text at the PR's final commit
 (`audit-record-contract/1`, §2.3 and §2.7); and the vector set is extended from 23
 to 26 to cover rules the text already stated (C-REC-2: C1 controls, unpaired
 surrogates, literal astral characters). No rule in §2.1–§2.9 changed. Both
-known-answer digests are unchanged.
+known-answer digests are unchanged. Version 1.0.0 adds four rejecting vectors
+(C-REC-3 and C-REC-5), for 30 in total, and one dated sentence in §2.2; no rule
+and no digest changed.
 
 **A.2 How MCP layers reference the contract.** The contract is off-wire, so an
 MCP proposal references it the way it references RFC 8785 or RFC 3339: by URL and
@@ -817,7 +824,7 @@ wire-observable.
 
 **A.4 Citing this contract.** Cite the repository URL with a release tag, and the
 canonical form by its identifier: "audit records conform to the Tamper-Evident
-Audit Record Contract v1.0.0-draft.1, canonical form `audit-record-contract/1`." A
+Audit Record Contract v1.0.0, canonical form `audit-record-contract/1`." A
 referencing document that needs a different canonical form is describing a
 different contract and MUST NOT reuse the identifier.
 
